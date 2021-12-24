@@ -1,0 +1,89 @@
+psexec.exe \\computer reg add "hklm\system\currentcontrolset\control\terminal server" /f /v fDenyTSConnections /t REG_DWORD /d 0
+
+Now enable the firewall exceptions:                            
+psexec \\computer netsh firewall set service remotedesktop enable 
+
+Sets NLA: 
+psexec \\computer reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v UserAuthentication /t REG_DWORD /d 1 /f
+
+psexec \\computer netsh advfirewall set service remotedesktop enable
+
+SEP STOP:
+"c:\Program Files (x86)\Symantec\Symantec Endpoint Protection\smc.exe" -p "pass" -stop
+
+Sync AD to O365:
+powershell start-adsyncsynccycle -policytype initial
+
+Domain:
+wmic computersystem get domain
+
+Dell recovery tool:
+https://www.dell.com/support/home/en-us/drivers/osiso/recoverytool
+
+Bitlocker:
+Manage-bde –Protectors –Disable C: -RebootCount 3
+
+Enable RDP
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+
+Disable RDP
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+
+You can see what DC the machine is trying to hit by running 
+nltest /dsgetdc:colobank.local
+at command prompt, super handy 
+
+To find Primary DC:
+netdom query fsmo
+
+If you need to forcibly change what DC it hits, you can run: 
+nltest /sc_reset:[domain]\[dc]", so "nltest /sc_reset:colobank.local\lja-dc01
+
+DISM /Online /Cleanup-Image /CheckHealth
+DISM /Online /Cleanup-Image /ScanHealth
+DISM /Online /Cleanup-Image /RestoreHealth
+
+SEP Clean Wipe: 
+https://support.symantec.com/en_US/article.HOWTO74877.html
+LatestVirusDefsDate
+HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\public-opstate
+
+Dell Diags:
+1.       Power-on the computer.
+2.       As the computer boots, press the <F12> key as the Dell logo appears.
+3.       On the boot menu screen, select the Diagnostics option. The Enhanced Pre-boot System Assessment window is displayed, listing all devices detected in the computer. The diagnostics starts running the tests on all the detected devices.
+4.       If you wish to run a diagnostic test on a specific device, press <Esc> and click Yes to stop the diagnostic test.
+5.       Select the device from the left pane and click Run Tests.
+6.       If there are any issues, error codes are displayed. Note the error code and contact Dell.
+
+gpresult /h gp.html
+
+Find when AD user account created:
+Get-ADUser -Identity garys -Properties whenCreated
+try that powershell =0
+
+PS For O365:
+(from any DC open powershell)
+$UserCredential = Get-Credential
+sign in with O365 credentials
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection
+Import-PSSession $Session -DisableNameChecking
+Then run command necessary
+Remove-PSSession $Session - to disconnect
+
+Test webcam: https://zoom.us/test
+
+365 Channel:
+Browse to “C:\Program Files\Common Files\Microsoft Shared\ClickToRun\”
+-Run:
+OfficeC2RClient.exe /changesetting Channel=Monthly
+or
+HKLM\Software\Microsoft\Office\Clicktorun\configuration
+Monthly Enterprise Channel
+CDNBaseUrl = http://officecdn.microsoft.com/pr/55336b82-a18d-4dd6-b5f6-9e5095c314a6
+
+Allow Microphone/Webcam	
+HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
+
+Add to Remote Desktop Users	
+net localgroup "remote desktop users" <user> /add

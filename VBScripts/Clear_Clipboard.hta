@@ -1,0 +1,25 @@
+<!-- Script was wrote by Kerrigan Taiga 9/11/2018-->
+<html>
+<head>
+<title>Clear Clipboard</title>
+<HTA:APPLICATION 
+     APPLICATIONNAME="Clear Clipboard by Kerrigan Taiga"
+     SCROLL="no"
+     SINGLEINSTANCE="yes"
+</head>
+
+<script runat="server" language="VBScript">
+	window.resizeTo 180,100 ' Resize Window W, H
+	
+	Sub Run_ClearClipboard()
+		Set objShell = CreateObject("WScript.Shell")
+		objShell.Run "cmd /c echo off | clip"
+	End Sub
+	
+</SCRIPT>
+
+<body>
+	<!–– html code here ––>
+		<input type="submit" title="Clear Clipboard" value="Clear Clipboard" onclick="Run_ClearClipboard()">
+
+</body>
