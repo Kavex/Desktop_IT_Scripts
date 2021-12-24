@@ -30,14 +30,14 @@ Disable RDP
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
 
 You can see what DC the machine is trying to hit by running 
-nltest /dsgetdc:colobank.local
+nltest /dsgetdc:domain
 at command prompt, super handy 
 
 To find Primary DC:
 netdom query fsmo
 
 If you need to forcibly change what DC it hits, you can run: 
-nltest /sc_reset:[domain]\[dc]", so "nltest /sc_reset:colobank.local\lja-dc01
+nltest /sc_reset:[domain]\[dc]", so "nltest /sc_reset:domain\dchost
 
 DISM /Online /Cleanup-Image /CheckHealth
 DISM /Online /Cleanup-Image /ScanHealth
@@ -59,7 +59,7 @@ Dell Diags:
 gpresult /h gp.html
 
 Find when AD user account created:
-Get-ADUser -Identity garys -Properties whenCreated
+Get-ADUser -Identity <user> -Properties whenCreated
 try that powershell =0
 
 PS For O365:
@@ -87,3 +87,22 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy
 
 Add to Remote Desktop Users	
 net localgroup "remote desktop users" <user> /add
+
+Install Windows Updates via PS
+Install-Module PSWindowsUpdate
+	◊ Type Y twice to install module
+Get-WindowsUpdate
+Install-WindowsUpdate
+** Auto install and reboot commands ** 
+Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -AutoReboot
+
+Windows Packages via PS
+	▪ List Windows Packages
+Get-AppxPackage –AllUsers | Select Name, PackageFullName
+	▪ List package by search keyword (*camera*)
+Get-AppxPackage –Name *<keyword>*
+	▪ Remove Windows Package
+Remove-AppxPackage <package name>
+
+Shows locked AD accounts via PS
+Search-ADAccount -lockedout | Select-Object Name, SamAccountName
