@@ -1,2 +1,2 @@
 # WorkScript
-Basic scripts written for general task at work
+Basic scripts written for general tasks for IT
