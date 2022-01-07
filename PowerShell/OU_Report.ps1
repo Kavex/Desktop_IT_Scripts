@@ -1,0 +1,2 @@
+$ExportPath = 'c:\temp\computers_in_ou.csv'
+Get-ADComputer -filter * -Properties ipv4Address, OperatingSystem,DistinguishedName | select-object Name, ipv4Address, OperatingSystem, @{label='OU';expression={$_.DistinguishedName.Split(',')[1].Split('=')[1]}}, Description | Export-Csv -NoType $ExportPath
