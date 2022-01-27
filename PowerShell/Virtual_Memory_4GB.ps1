@@ -7,4 +7,7 @@ $pagefileset.MaximumSize = 16384
 $pagefileset.Put() | Out-Null
 $result = Gwmi win32_Pagefilesetting | Select Name, InitialSize, MaximumSize
 $result | Out-File 'c:\temp\VirtualMemorySettings.txt'
-shutdown -r -t $([int]([datetime]"12PM"-(Get-Date)).TotalSeconds)
+[datetime]$RestartTime = '9PM'
+[datetime]$CurrentTime = Get-Date
+[int]$WaitSeconds = ( $RestartTime - $CurrentTime ).TotalSeconds
+shutdown -r -t $WaitSeconds
