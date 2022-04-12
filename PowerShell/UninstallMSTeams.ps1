@@ -4,8 +4,8 @@ function Get-TimeStamp {
     }
     
     #Function to generate a log file
-    if ((Test-Path -Path "$ENV:SystemDrive\Temp\MSTeams" -PathType Container) -ne $true ) {mkdir "$ENV:SystemDrive\Temp\MSTeams" | Out-Null}
-    $LogFile = "$ENV:SystemDrive\Temp\MSTeams\MSTeamsRemovealLogs.log"
+    if ((Test-Path -Path "$ENV:SystemDrive\Temp\Logs" -PathType Container) -ne $true ) {mkdir "$ENV:SystemDrive\Temp\Logs" | Out-Null}
+    $LogFile = "$ENV:SystemDrive\Temp\Logs\MSTeamsRemovealLogs.log"
     Function LogWrite
     {
       Param ([string]$logstring)
