@@ -42,4 +42,11 @@ Foreach($obj in $UserArray){
     }
 }
 Remove-PSDrive HKU
+LogWrite "Downloading CleanZoom.exe"
+cd c:\temp\
+Invoke-WebRequest -Uri "https://assets.zoom.us/docs/msi-templates/CleanZoom.zip" -OutFile CleanZoom.zip
+Expand-Archive c:\temp\CleanZoom.zip -DestinationPath c:\temp\ -force
+LogWrite "Running CleanZoom.exe"
+.\CleanZoom.exe /silent
+LogWrite "CleanZoom.exe Logs in C:\Temp\"
  LogWrite "** ENDING Uninstall Zoom Script **"
