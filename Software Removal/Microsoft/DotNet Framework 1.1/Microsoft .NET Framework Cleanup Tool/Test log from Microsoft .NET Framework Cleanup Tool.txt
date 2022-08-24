@@ -1,0 +1,99 @@
+[08/04/22,10:30:17] Starting cleanup for product .NET Framework 1.1
+[08/04/22,10:30:17] Section [Stop Services - .NET Framework Common] - start parsing entries
+[08/04/22,10:30:17] Found entry msiserver, performing action now
+[08/04/22,10:30:17] Attempting to stop the service 'msiserver'
+[08/04/22,10:30:17] The service 'msiserver' was already stopped
+[08/04/22,10:30:17] Found entry httpfilter, performing action now
+[08/04/22,10:30:17] Attempting to stop the service 'httpfilter'
+[08/04/22,10:30:17] ***WARNING*** Failed to open the service 'httpfilter'
+[08/04/22,10:30:17] Found entry msftpsvc, performing action now
+[08/04/22,10:30:17] Attempting to stop the service 'msftpsvc'
+[08/04/22,10:30:17] ***WARNING*** Failed to open the service 'msftpsvc'
+[08/04/22,10:30:17] Found entry nntpsvc, performing action now
+[08/04/22,10:30:17] Attempting to stop the service 'nntpsvc'
+[08/04/22,10:30:17] ***WARNING*** Failed to open the service 'nntpsvc'
+[08/04/22,10:30:17] Found entry smtpsvc, performing action now
+[08/04/22,10:30:17] Attempting to stop the service 'smtpsvc'
+[08/04/22,10:30:17] ***WARNING*** Failed to open the service 'smtpsvc'
+[08/04/22,10:30:17] Found entry w3svc, performing action now
+[08/04/22,10:30:17] Attempting to stop the service 'w3svc'
+[08/04/22,10:30:17] ***WARNING*** Failed to open the service 'w3svc'
+[08/04/22,10:30:17] Found entry iisadmin, performing action now
+[08/04/22,10:30:17] Attempting to stop the service 'iisadmin'
+[08/04/22,10:30:17] ***WARNING*** Failed to open the service 'iisadmin'
+[08/04/22,10:30:17] Section [Stop Services - .NET Framework Common] - stop parsing entries
+[08/04/22,10:30:17] Section [Product Codes - .NET Framework 1.1] - start parsing entries
+[08/04/22,10:30:17] Found entry {CB2F7EDD-9D1F-43C1-90FC-4F52EAE172A1}, performing action now
+[08/04/22,10:30:17] MsiQueryProductState returned INSTALLSTATE_DEFAULT for product code {CB2F7EDD-9D1F-43C1-90FC-4F52EAE172A1}
+[08/04/22,10:30:17] MsiGetProductInfo returned C:\WINDOWS\Installer\1019ae.msi for locally cached MSI path
+[08/04/22,10:30:17] Locally cached MSI exists, running msiexec /x now
+[08/04/22,10:30:17] Launching process 'C:\WINDOWS\system32\msiexec.exe /x {CB2F7EDD-9D1F-43C1-90FC-4F52EAE172A1} /qn' now
+[08/04/22,10:30:17] Process successfully launched. Waiting 900 seconds for it to complete.
+[08/04/22,10:31:08] Process 'C:\WINDOWS\system32\msiexec.exe /x {CB2F7EDD-9D1F-43C1-90FC-4F52EAE172A1} /qn' exited with return code 0
+[08/04/22,10:31:08] Launching process 'C:\Users\csiadmin\AppData\Local\Temp\IXP000.TMP\msizapw.exe TP {CB2F7EDD-9D1F-43C1-90FC-4F52EAE172A1}' now
+[08/04/22,10:31:09] Process successfully launched. Waiting 60 seconds for it to complete.
+[08/04/22,10:31:09] Process 'C:\Users\csiadmin\AppData\Local\Temp\IXP000.TMP\msizapw.exe TP {CB2F7EDD-9D1F-43C1-90FC-4F52EAE172A1}' exited with return code 0
+[08/04/22,10:31:09] Section [Product Codes - .NET Framework 1.1] - stop parsing entries
+[08/04/22,10:31:09] Section [Directories - .NET Framework Common] - start parsing entries
+[08/04/22,10:31:09] Found entry %11%\URTTemp, performing action now
+[08/04/22,10:31:09] Section [Directories - .NET Framework Common] - stop parsing entries
+[08/04/22,10:31:09] Section [Directories - .NET Framework 1.1] - start parsing entries
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\Accessibility\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\cscompmgd\7.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\CustomMarshalers\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\IEExecRemote\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\IEHost\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\IIEHost\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\ISymWrapper\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\Microsoft.JScript\7.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\Microsoft.VisualBasic.Vsa\7.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\Microsoft.VisualBasic\7.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\Microsoft.VisualC\7.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\Microsoft.Vsa.Vb.CodeDOMProcessor\7.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\Microsoft.Vsa\7.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\Microsoft_VsaVb\7.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\mscorcfg\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\Regcode\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Configuration.Install\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Data.OracleClient\1.0.5000.0__b77a5c561934e089, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Data\1.0.5000.0__b77a5c561934e089, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Design\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.DirectoryServices\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Drawing.Design\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Drawing\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.EnterpriseServices\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Management\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Messaging\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Runtime.Remoting\1.0.5000.0__b77a5c561934e089, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Runtime.Serialization.Formatters.Soap\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Security\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.ServiceProcess\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Web.Mobile\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Web.RegularExpressions\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Web.Services\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Web\1.0.5000.0__b03f5f7f11d50a3a, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Windows.Forms\1.0.5000.0__b77a5c561934e089, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System.Xml\1.0.5000.0__b77a5c561934e089, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\GAC\System\1.0.5000.0__b77a5c561934e089, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\NativeImages1_v1.1.4322\CustomMarshalers, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\NativeImages1_v1.1.4322\mscorlib, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\NativeImages1_v1.1.4322\System, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\NativeImages1_v1.1.4322\System.Design, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\NativeImages1_v1.1.4322\System.Drawing, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\NativeImages1_v1.1.4322\System.Drawing.Design, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\NativeImages1_v1.1.4322\System.Windows.Forms, performing action now
+[08/04/22,10:31:09] Found entry %10%\Assembly\NativeImages1_v1.1.4322\System.Xml, performing action now
+[08/04/22,10:31:09] Found entry %10%\Microsoft.NET\Framework\v1.1.4322\Updates, performing action now
+[08/04/22,10:31:09] Section [Directories - .NET Framework 1.1] - stop parsing entries
+[08/04/22,10:31:09] Section [Files - .NET Framework Common] - start parsing entries
+[08/04/22,10:31:09] Found entry %10%\System\mscoree.dll, performing action now
+[08/04/22,10:31:09] Found entry %10%\System\mscoree.dll.local, performing action now
+[08/04/22,10:31:09] Found entry %11%\mscoree.dll.local, performing action now
+[08/04/22,10:31:09] Found entry %11%\ndphlpr.vxd, performing action now
+[08/04/22,10:31:09] Found entry %10%\SysWow64\mscoree.dll.local, performing action now
+[08/04/22,10:31:09] Found entry %10%\SysWow64\ndphlpr.vxd, performing action now
+[08/04/22,10:31:09] Section [Files - .NET Framework Common] - stop parsing entries
+[08/04/22,10:31:09] Section [Files - .NET Framework 1.1] - start parsing entries
+[08/04/22,10:31:09] Found entry %11%\mscorier.dll, performing action now
+[08/04/22,10:31:12] Successfully marked C:\WINDOWS\system32\mscorier.dll to be deleted after the next reboot
+[08/04/22,10:31:12] Found entry %11%\mscories.dll, performing action now
