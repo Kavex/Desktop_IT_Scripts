@@ -3,6 +3,7 @@ echo ******** Locked Accounts ********
 echo | powershell "Search-ADAccount -lockedout | Select-Object Name, SamAccountName"
 echo *********************************
 set /p id=Enter Username to Unlock:
+echo | powershell "Get-ADUser -Identity %id% -Properties * | Select-Object LockedOut, AccountLockoutTime, BadLogonCount"
 net user %id% /domain /active:yes
 echo %id% Account Status: 
 echo | powershell "Get-ADUser %id% -Properties * | Select-Object LockedOut"
